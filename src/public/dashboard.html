@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-button-prev, .swiper-button-next {
+            color: white;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .swiper-pagination-bullet-active {
+            background: #764ba2;
+        }
+        .bookings-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        .status-new { color: #ffc107; font-weight: bold; }
+        .status-assigned { color: #28a745; font-weight: bold; }
+        .status-completed { color: #17a2b8; font-weight: bold; }
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+            margin: 0;
+        }
+        .review-form {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .review-form select, .review-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: bold;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .nav-links {
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    table, th, td {
+        font-size: 12px;
+    }
+    th, td {
+        padding: 8px 6px;
+    }
+    .btn-small {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    .swiper {
+        height: 200px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="./booking.html">Новая заявка</a>
+            <a href="#" id="logoutBtn">Выйти</a>
+        </div>
+        <h2>Добро пожаловать, <span id="userLogin"></span>!</h2>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./images/slide1.jpg" alt="Банкетный зал"></div>
+                <div class="swiper-slide"><img src="./images/slide2.jpg" alt="Ресторан"></div>
+                <div class="swiper-slide"><img src="./images/slide3.jpg" alt="Летняя веранда"></div>
+                <div class="swiper-slide"><img src="./images/slide4.jpg" alt="Закрытая веранда"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <h3>Мои заявки</h3>
+        <div class="bookings-table">
+            <table id="bookingsTable">
+                <thead>
+                    <tr><th>Помещение</th><th>Дата</th><th>Оплата</th><th>Статус</th><th>Отзыв</th></tr>
+                </thead>
+                <tbody id="bookingsList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>

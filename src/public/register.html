@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">ФИО:</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" placeholder="7(XXX)-XXX-XX-XX" pattern="[0-9]+" minlength="11" maxlength="11" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login">Логин (латиница, цифры, мин 6 символов):</label>
+                    <input type="text" id="login" pattern="[A-Za-z0-9]{6,}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль (мин 8 символов):</label>
+                    <input type="password" id="password" minlength="8" required>
+                </div>
+                <button type="submit" class="btn btn-block">Зарегистрироваться</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">
+                Уже есть аккаунт? <a href="./login.html">Войдите</a>
+            </p>
+        </div>
+    </div>
+    <script src="./js/common.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>

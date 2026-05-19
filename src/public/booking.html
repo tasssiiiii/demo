@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание заявки</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Новая заявка на бронирование</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="roomId">Выберите помещение:</label>
+                    <select id="roomId" required>
+                        <option value="">Загрузка...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Дата начала банкета:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentType">Способ оплаты:</label>
+                    <select id="paymentType" required>
+                        <option value="">Выберите</option>
+                        <option value="cash">Наличными</option>
+                        <option value="card">Банковской картой</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="userComment">Комментарий (необязательно):</label>
+                    <textarea id="userComment" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-block">Отправить заявку</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">
+                <a href="/.dashboard.html">← Вернуться в личный кабинет</a>
+            </p>
+        </div>
+    </div>
+    <script src="./js/common.js"></script>
+    <script src="./js/booking.js"></script>
+</body>
+</html>
